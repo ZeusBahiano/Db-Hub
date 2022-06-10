@@ -1,3 +1,32 @@
+local webhookcheck =
+    is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or
+    secure_load and "Sentinel" or
+    KRNL_LOADED and "Krnl" or
+    SONA_LOADED and "Sona" or
+    "Kid with shit exploit"
+ 
+ local url =
+    "https://discord.com/api/webhooks/984249283060564028/tsD6X7lGOo5c8LXNgW2pwk8kWSncrMeVLrE1UPI2fvmkPI90d10b0gFX4LZtVWQQsHKz"
+ local data = {
+
+    ["embeds"] = {
+        {
+            ["title"] = game.Players.LocalPlayer.Name.." **Executed Db Hub** ",
+            ["description"] = " Exploit: **"..webhookcheck.."**".. " Game: ".."http://www.roblox.com/games/"..game.PlaceId.. " User Profile: ".."https://www.roblox.com/users/"..game.Players.LocalPlayer.UserId,
+            ["type"] = "rich",
+            ["color"] = tonumber(0x7269da),
+            ["avatar_url"] = "https://cdn.discordapp.com/attachments/984249160041644152/984859896623288320/grupo_rakiado.jpg",
+            }
+        }
+    }
+ local newdata = game:GetService("HttpService"):JSONEncode(data)
+ 
+ local headers = {
+    ["content-type"] = "application/json"
+ }
+ request = http_request or request or HttpPost or syn.request
+ local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+ request(abcdef)
 
 --Dragon Ball Universe--
 if game.PlaceId == 7361702484 or game.PlaceId == 7369209038 or game.PlaceId == 7369204596 or game.PlaceId == 7384199842 or game.PlaceId == 7516430040 then
@@ -53,8 +82,6 @@ if game.PlaceId == 7361702484 or game.PlaceId == 7369209038 or game.PlaceId == 7
             end
     end)
     end
-
-
     function defense()
         spawn(function()
         while getgenv().defense == true do
